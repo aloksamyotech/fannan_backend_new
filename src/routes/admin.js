@@ -1,6 +1,5 @@
 import express from 'express'
-import { usercontroller } from '../controllers/user/User.js';
-import { CategoryController } from '../controllers/admin/Category.js';
+import { Category_controller} from '../controllers/user/Category.js';
 import { StateController } from '../controllers/admin/State.js';
 import { CityController } from '../controllers/admin/City.js';
 
@@ -10,7 +9,7 @@ const AdminRouter = express.Router()
 
 // Category
 
-const category_controller = new CategoryController
+const category_controller = new Category_controller
 AdminRouter.post("/admin/add/category", category_controller.add_category)
 AdminRouter.get("/admin/get/all/category", category_controller.get_category)
 

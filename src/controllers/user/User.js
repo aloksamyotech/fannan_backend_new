@@ -1,10 +1,10 @@
 import { StatusCodes } from "http-status-codes"
 import { addUser } from "../../repository/user/user/add_user.js"
-import { userLogin } from "../../repository/user/auth/user_login.js"
+import { userLogin } from "../../repository/user/user/userLogin.js"
 
 export class usercontroller {
 
-    async user_regisgtration(req, res) {
+    async UserRegistration(req, res) {
         try {
             const data = await addUser(req.body)
             if (data === 0) {
@@ -26,7 +26,7 @@ export class usercontroller {
 
 
 
-    async user_login(req, res) {
+    async UserLogin(req, res) {
 
 
         const data = await userLogin(req.body)
@@ -42,6 +42,21 @@ export class usercontroller {
             res.status(StatusCodes.OK).json({ massege: "user logged in successfully", data })
         }
 
+
+    }
+
+
+    async UpdateProfile(req, res) {
+        try {
+            console.log(req.body)
+
+            const data = await UserModel.findByIdAndUpdate({ '_id': req.params.id }, req.body)
+            res.status(StatusCodes.CREATED).json({ massege: "profile updated successfully", data })
+
+        } catch (error) {
+            console.log(error)
+            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ massege: "something went wrong " })
+        }
 
     }
 

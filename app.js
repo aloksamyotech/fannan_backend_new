@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import "dotenv/config";
-import { Dbconnection } from "./config/main.js";
-import UserRouter from "./routes/user.js";
-import AdminRouter from "./routes/admin.js";
+import { Dbconnection } from "./src/config/main.js";
+import UserRouter from "./src/routes/user.js"
+import AdminRouter from "./src/routes/admin.js";
 import cors from "cors";
 
 const app = express();
