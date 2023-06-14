@@ -10,8 +10,8 @@ const AdminRouter = express.Router()
 // Category
 
 const category_controller = new Category_controller
-AdminRouter.post("/admin/add/category", category_controller.add_category)
-AdminRouter.get("/admin/get/all/category", category_controller.get_category)
+AdminRouter.post("/admin/add/category", category_controller.AddCategory)
+AdminRouter.get("/admin/get/all/category", category_controller.AllCategory)
 
 
 

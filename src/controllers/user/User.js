@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes"
 import { addUser } from "../../repository/user/user/add_user.js"
-import { userLogin } from "../../repository/user/user/userLogin.js"
+import { userLogin } from "../../repository/user/user/user_login.js"
 
 export class usercontroller {
 
