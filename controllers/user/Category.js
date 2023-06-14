@@ -1,0 +1,5 @@
+class CategoryController {
+    CategoryById = async() = {
+
+    }
+}
