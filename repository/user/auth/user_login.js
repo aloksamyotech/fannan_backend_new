@@ -25,6 +25,7 @@ export const userLogin = async (req) => {
                 email: user_details[0].email,
                 phone: user_details[0].phone,
                 category: user_details[0].userdata.title,
+                id: user_details[0]._id,
                 created_at: moment(user_details.created_at).format('MMMM Do YYYY, h:mm:ss a') // June 8th 2023, 7:39:08 pm
             }
 

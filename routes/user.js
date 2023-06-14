@@ -5,8 +5,6 @@ const UserRouter = express.Router();
 
 // User Registration
 
-import express from 'express'
-import { usercontroller } from '../controllers/user/User.js';
 import { Category_controller } from '../controllers/user/Category.js';
 
 // Get users by category id

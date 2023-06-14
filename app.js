@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express from "express";
 import bodyParser from "body-parser";
 import "dotenv/config";
 import { Dbconnection } from "./config/main.js";
