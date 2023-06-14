@@ -1,12 +1,17 @@
+import express from "express";
+import { usercontroller } from "../controllers/user/User.js";
 
+const UserRouter = express.Router();
 
+// User Registration
 
 import express from 'express'
 import { usercontroller } from '../controllers/user/User.js';
 import { Category_controller } from '../controllers/user/Category.js';
 
-const UserRouter = express.Router()
+// Get users by category id
 
+// UserRouter.get("/user/by/category/:id");
 
 
 // User Registration 
