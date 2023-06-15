@@ -29,7 +29,9 @@ AdminRouter.get("/admin/get/all/state", state_controller.GetAllState)
 // Citys 
 
 const city_controller = new CityController
+
 AdminRouter.post("/admin/add/city", city_controller.AddCity)
+AdminRouter.get("/admin/get/all/city", city_controller.GetAllCity)
 
 
 export default AdminRouter; 

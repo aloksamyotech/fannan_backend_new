@@ -20,4 +20,22 @@ export class CityController {
         }
 
     }
+
+
+    GetAllCity = async (req, res) => {
+
+        try {
+
+            const data = await  city_model.find()
+            res.status(StatusCode.OK).json({citydata  : data } )
+
+
+        } catch (error) {
+            console.log(error)
+
+            res.status(StatusCode.INTERNAL_SERVER_ERROR).json({ massege: "Something went wrong" })
+
+        }
+
+    }
 }
