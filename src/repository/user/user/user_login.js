@@ -12,7 +12,6 @@ export const userLogin = async (req) => {
 
  
         const user_details = await UserModel.aggregate([
-          { $match: { email: req.email } },
           {
             $lookup: {
               from: "categories",
