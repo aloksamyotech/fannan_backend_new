@@ -31,16 +31,7 @@ export class usercontroller {
 
         const data = await userLogin(req.body)
 
-        if (data === 1) {
-            res.status(StatusCodes.BAD_REQUEST).json({ massege: "User Not Found" })
-        }
-        else if (data === 0) {
-            res.status(StatusCodes.BAD_REQUEST).json({ massege: "Wrong Password" })
-
-        } else {
-
-            res.status(StatusCodes.OK).json({ massege: "user logged in successfully", data })
-        }
+        res.status(200).json(data)
 
 
     }

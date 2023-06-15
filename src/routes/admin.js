@@ -18,7 +18,10 @@ AdminRouter.get("/admin/get/all/category", category_controller.AllCategory)
 // States 
 
 const state_controller = new StateController
-AdminRouter.post("/admin/add/state", state_controller.add_state)
+AdminRouter.post("/admin/add/state", state_controller.AddState)
+AdminRouter.get("/admin/get/all/state", state_controller.GetAllState)
+
+
 
 
 
@@ -26,7 +29,7 @@ AdminRouter.post("/admin/add/state", state_controller.add_state)
 // Citys 
 
 const city_controller = new CityController
-AdminRouter.post("/admin/add/city", city_controller.add_city)
+AdminRouter.post("/admin/add/city", city_controller.AddCity)
 
 
 export default AdminRouter; 

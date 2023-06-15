@@ -4,7 +4,7 @@ export class CityController {
 
 
 
-    add_city = async (req, res) => {
+    AddCity = async (req, res) => {
 
         try {
 

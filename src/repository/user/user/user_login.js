@@ -24,23 +24,19 @@ export const userLogin = async (req) => {
           { $unwind: { path: "$userdata" } },
         ]);
   
-        const details = {
-          id: user_details[0]._id,
-          firstname: user_details[0].firstname,
-          lastname: user_details[0].lastname,
-          email: user_details[0].email,
-          phone: user_details[0].phone,
-          category: user_details[0].userdata.title,
-          created_at: moment(user_details.created_at).format(
-            "MMMM Do YYYY, h:mm:ss a"
-          ), // June 8th 2023, 7:39:08 pm
-        };
-  
-        return {
-            status : 200 , 
-            massege : "Loged in successfully",
-            data : details
-          };
+        // const details = {
+        //   id: user_details[0]._id,
+        //   firstname: user_details[0].firstname,
+        //   lastname: user_details[0].lastname,
+        //   email: user_details[0].email,
+        //   phone: user_details[0].phone,
+        //   category: user_details[0].userdata.title,
+        //   created_at: moment(user_details.created_at).format(
+        //     "MMMM Do YYYY, h:mm:ss a"
+        //   ), // June 8th 2023, 7:39:08 pm
+        // };
+  console.log(userdata)
+        return user_details ; 
       } else {
         return {
             status : 400 , 
