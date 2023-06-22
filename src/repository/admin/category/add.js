@@ -2,8 +2,6 @@ import { category_model } from "../../../models/schemas/admin/Category.js"
 
 export const addCategory = async  (req) =>
 {
-
-
     try {
         console.log(req.body)
         let category_data = category_model(req.body)
@@ -18,7 +16,6 @@ export const addCategory = async  (req) =>
     } catch (error) {
         console.log(error)
         return {
-            data:[],
             massege : "something went wrong",
             status : 500
         }
