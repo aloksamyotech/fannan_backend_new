@@ -8,7 +8,6 @@ export const getUserByCategory = async (req, res, next) => {
             category: req.params.id
         }
         const userdata = await UserModel.find(filter)
-        console.log(userdata)
         if (userdata) {
 
             var project = {
@@ -56,12 +55,8 @@ export const getUserByCategory = async (req, res, next) => {
             })
             const userDetails = []
             for (let i = 0; i < data.length; i++) {
-                console.log("fa;kdsjfa")
                 if (data[i].category_id == req.params.id) {
                     userDetails.push(data[i])
-                }
-                else {
-                    console.log("a;dsjf")
                 }
             }
             if (userDetails.length > 0) {
