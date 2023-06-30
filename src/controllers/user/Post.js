@@ -1,6 +1,6 @@
 import { add } from "../../repository/user/post/add.js"
 import { addLike, getLike } from "../../repository/user/post/like.js"
-import { getById } from "../../repository/user/post/get.js"
+import { getAllPost, getById } from "../../repository/user/post/get.js"
 
 export class postController {
 
@@ -24,6 +24,12 @@ export class postController {
 
     GetLike = async (req, res) => {
         const data = await getLike(req)
+        res.status(data.status).json(data)
+    }
+
+
+    GetAllPost = async (req, res) => {
+        const data = await getAllPost(req)
         res.status(data.status).json(data)
     }
 

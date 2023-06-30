@@ -4,7 +4,7 @@ import moment from "moment"
 export const detailsById = async (req, res, next) => {
     try {
         const filter = {
-            _id: req.params.id
+            _id: req
         }
         const userdata = await UserModel.findById(filter)
         if (userdata) {

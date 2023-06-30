@@ -13,6 +13,7 @@ UserRouter.post("/user/login", UserController.UserLogin)
 UserRouter.put("/user/update/profile/:id", UserController.UpdateProfile)
 UserRouter.get("/user/get/user/category/:id" , UserController.GetUserByCategory)
 UserRouter.get("/user/get/details/:id", UserController.GetUserDetailsById)
+UserRouter.get("/user/get/user/filter" , UserController.GetUserByFilter)
 
 
 // User Post 
@@ -20,8 +21,10 @@ UserRouter.get("/user/get/details/:id", UserController.GetUserDetailsById)
 const PostControler = new postController
 UserRouter.post("/user/add/post" , PostControler.AddPost)
 UserRouter.get("/user/get/post/byid/:id", PostControler.GetPostById)
-UserRouter.post("/user/add/post/like/:postid", PostControler.AddLike)
+UserRouter.post("/user/add/like", PostControler.AddLike)
 UserRouter.get("/user/get/post/like/:postid", PostControler.GetLike)
+UserRouter.get("/user/get/all/post" , PostControler.GetAllPost)
+
 
 
 // Comment on post 
@@ -39,6 +42,13 @@ const ReviewControler = new reviewController
 
 UserRouter.post("/user/add/review", ReviewControler.AddReview)
 UserRouter.get("/user/get/review/byuserid/:id", ReviewControler.GetReview)
+
+
+// Like 
+
+// const likeControler = new postController
+
+// UserRouter.post("/user/add/like", likeControler.AddLike)
 
 
 

@@ -21,3 +21,14 @@ export const add = async (req, res, next) => {
     }
 
 }
+
+
+export  const UpdateLike = async (postId) => { 
+    const postData = await post_model.find({ _id: postId})
+        postData[0].like = postData[0].like + 1
+        const updatedPost = await post_model.findOneAndUpdate(
+            { _id: postId},
+            postData[0],
+            { new: true }
+        )
+}

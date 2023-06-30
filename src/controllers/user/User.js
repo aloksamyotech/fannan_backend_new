@@ -3,6 +3,7 @@ import { userLogin } from "../../repository/user/user/user_login.js"
 import { updateProfile } from "../../repository/user/user/update_profile.js"
 import { getUserByCategory } from "../../repository/user/user/user_by_category.js"
 import { detailsById } from "../../repository/user/user/details.js"
+import { applyfilter } from "../../repository/user/user/filter.js"
 
 export class usercontroller {
 
@@ -28,12 +29,12 @@ export class usercontroller {
     }
 
     GetUserDetailsById = async (req, res) => {
-        const data = await detailsById(req)
+        const data = await detailsById(req.params.id)
         res.status(data.status).json(data)
-    }
+    } 
 
-    AddUserLikes = async (req, res) => {
-        const data = await like(req)
+    GetUserByFilter = async (req, res) => {
+        const data = await applyfilter(req)
         res.status(data.status).json(data)
     }
 }

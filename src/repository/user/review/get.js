@@ -4,7 +4,6 @@ import moment from "moment"
 
 export const getByUserId = async (req, res, next) => {
     try {
-
         const filter = {
             userid: req.params.id
         }
