@@ -8,18 +8,17 @@ export class commentController {
     addComment = async (req, res) => {
         const { error } = messageValidate.validate(req.body)
         if (!error) {
-            console.log(error)
             const data = await add(req)
             res.status(data.status).json(data)
         }
         else {
             res.status(400).json({ error: error.details[0].message })
-        }
 
+        }
     }
 
     getCommentByPostid = async (req, res) => {
-        const data = await getfrompostId(req)
+        const data = await getfrompostId(req.params.id)
         res.status(data.status).json(data)
     }
 }

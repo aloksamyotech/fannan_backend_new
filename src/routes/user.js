@@ -21,9 +21,11 @@ UserRouter.get("/user/get/user/filter" , UserController.GetUserByFilter)
 const PostControler = new postController
 UserRouter.post("/user/add/post" , PostControler.AddPost)
 UserRouter.get("/user/get/post/byid/:id", PostControler.GetPostById)
-UserRouter.post("/user/add/like", PostControler.AddLike)
+UserRouter.post("/user/add/post/like", PostControler.AddLike)
 UserRouter.get("/user/get/post/like/:postid", PostControler.GetLike)
 UserRouter.get("/user/get/all/post" , PostControler.GetAllPost)
+UserRouter.put("/user/update/post/:id", PostControler.UpdatePost)
+UserRouter.delete("/user/delete/post/:id" , PostControler.DeletePost)
 
 
 

@@ -11,6 +11,7 @@ const ObjectId = Schema.Types.ObjectId
     date : { type : Date, default : Date.now },
     like : { type: Number, required: false , default: 0 },
     image : { type : String , required : false } 
+    
  });
 
 

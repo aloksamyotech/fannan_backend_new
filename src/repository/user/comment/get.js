@@ -1,13 +1,13 @@
 import moment from "moment"
 import { comment_model } from "../../../models/schemas/user/Comment.js"
 
-export const getfrompostId = async (req, res, next) => {
+export const getfrompostId = async (post_id) => {
     try {
         const filter = {
-            postid: req.params.id
+            postid: post_id
         }
-        const commentdata = await comment_model.find(filter)
-        const data = commentdata.map((item) => {
+        const CommnetData = await comment_model.find(filter)
+        const data = CommnetData.map((item) => {
             let current_date = (moment(new Date()))
             let comment_date = moment(item.date)
             let result = ""

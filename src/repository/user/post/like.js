@@ -1,4 +1,5 @@
 import { like_model } from "../../../models/schemas/user/Like.js"
+import { IsUserExist } from "../user/details.js"
 import { GetUserById } from "../user/get_user.js"
 import { UpdateLike } from "./add.js"
 import { IsPostExist } from "./get.js"
@@ -17,24 +18,25 @@ const IsLiked = async (postId, userId) => {
 }
 
 export const addLike = async (req, res, next) => {
+
     try {
-        const userId = req.body.userid
-        const userData = await  GetUserById(userId)
-        if (!userData) {
+        const UserId = req.body.userid
+        const isUserExist = await IsUserExist(UserId)
+        if (!isUserExist) {
             return {
                 status: 404,
                 message: "user not found"
             }
         }
         const postId = req.body.postid
-        const postData = await  IsPostExist(postId)
+        const postData = await IsPostExist(postId)
         if (!postData) {
             return {
                 status: 404,
                 message: "post not found"
             }
         }
-        const isLiked = await IsLiked(postId, userId)
+        const isLiked = await IsLiked(postId, UserId)
         if (isLiked) {
             return {
                 status: 400,
@@ -51,7 +53,7 @@ export const addLike = async (req, res, next) => {
         }
     } catch (error) {
         return {
-            status: 500, 
+            status: 500,
             massege: "something went wrong" + error.message
         }
 

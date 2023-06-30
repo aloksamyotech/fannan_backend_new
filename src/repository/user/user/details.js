@@ -77,3 +77,16 @@ export const detailsById = async (req, res, next) => {
         }
     }
 }
+
+export const IsUserExist = async (id) => {
+    const filter = {
+        _id: id,
+    }
+    const user = await UserModel.findById(filter)
+    if (user) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
