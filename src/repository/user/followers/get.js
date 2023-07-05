@@ -4,7 +4,7 @@ import { followersModel } from "../../../models/schemas/user/Follow.js"
 import { IsUserExist } from "../user/details.js"
 
 
-const allFollowersOfUser =  async (id) => {
+const allFollowersOfUser = async (id) => {
     const filter = { following_id: id }
     const count = await followersModel.count(filter)
     return count ? count : 0
@@ -43,7 +43,7 @@ export const getAllFollowers = async (id) => {
         console.log(error)
         return{
             status : StatusCodes.INTERNAL_SERVER_ERROR,
-            message : CommonMessage.INTERNAL_SERVER_ERROR
+            message : "Internal Server Error"
         }
 
     }

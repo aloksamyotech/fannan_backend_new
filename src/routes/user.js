@@ -3,6 +3,7 @@ import { usercontroller } from "../controllers/user/User.js";
 import { postController } from "../controllers/user/Post.js";
 import { commentController } from "../controllers/user/Comment.js";
 import { reviewController } from "../controllers/user/Review.js";
+import { followersController } from "../controllers/user/Follow.js";
 const UserRouter = express.Router();
 
 // User Registration
@@ -46,11 +47,12 @@ UserRouter.post("/user/add/review", ReviewControler.AddReview)
 UserRouter.get("/user/get/review/byuserid/:id", ReviewControler.GetReview)
 
 
-// Like 
+// Followers 
 
-// const likeControler = new postController
+const FollowersControler = new followersController
 
-// UserRouter.post("/user/add/like", likeControler.AddLike)
+UserRouter.post("/user/add/followers", FollowersControler.Add)
+UserRouter.get("/user/get/followers/:id", FollowersControler.Get)
 
 
 

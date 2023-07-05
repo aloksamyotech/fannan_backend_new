@@ -6,3 +6,12 @@ export class CommonMsg {
         massege: "data saved successfully"
     }
 }
+
+
+export const CommonMessage = { 
+
+
+    
+
+
+}
